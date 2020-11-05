@@ -42,8 +42,8 @@ pipeline{
 	stage('build'){
             agent any
             steps{
-                sh "docker build -t muhabbat/handson-jenkins ."
-                sh "docker tag 656003888283.dkr.ecr.us-east-1.amazonaws.com/muhabbat/jenkins-handson/muhabbat/handson-jenkins:latest"
+                sh "docker build -t muhabbat/jenkins-handson ."
+                sh "docker tag muhabbat/jenkins-handson:latest 656003888283.dkr.ecr.us-east-1.amazonaws.com/muhabbat/jenkins-handson:latest"
             }
         }
 
