@@ -96,7 +96,7 @@ pipeline{
                             eksctl create cluster \
                                 --name muhabbat-cluster2 \
                                 --version 1.18 \
-                                --region us-east-1 \
+                                --region us-east-1d \
                                 --nodegroup-name my-nodes \
                                 --node-type t2.small \
                                 --nodes 1 \
@@ -122,7 +122,8 @@ pipeline{
                     if [ "$VolumeId" == '' ]
                     then
                         aws ec2 create-volume \
-                            --availability-zone us-east-1a \
+                            --region us-east-1d
+                            --availability-zone us-east-1d \
                             --volume-type gp2 \
                             --size 10 \
                             --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=k8s-python-mysql-app}]'
