@@ -72,10 +72,10 @@ pipeline{
                     else
                         aws ec2 create-key-pair \
                           --region us-east-1 \
-                          --key-name muhabbat.pem \
+                          --key-name muhabbat3.pem \
                           --query KeyMaterial \
-                          --output text > mattsJenkinsKey3.pem
-                        chmod 400 mattsJenkinsKey3.pem
+                          --output text > muhabbat3.pem
+                        chmod 400 muhabbat3.pem
                         ssh-keygen -y -f muhabbat3.pem >> muhabbat3_public.pem
                     fi
                 '''
